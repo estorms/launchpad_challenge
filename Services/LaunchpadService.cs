@@ -30,11 +30,13 @@ namespace launchpad_challenge.Services
             return await RetrieveLaunchpadFromDatabase();
         }
 
+        //TODO: Move this to a data-access layer that uses a repo to retrieve from db
         public async Task<List<Launchpad>> RetrieveLaunchpadFromDatabase()
         {
             throw new NotImplementedException();
         }
 
+        //TODO: Move this to a Client layer for further abstraction?
         public async Task<List<Launchpad>> RetrieveApiData()
         {
             using (var client = new HttpClient())
