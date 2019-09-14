@@ -1,0 +1,14 @@
+/Users/elizabethsanger/workspace/launchpad_challenge/obj/Debug/netcoreapp2.2/launchpad_challenge.csprojAssemblyReference.cache
+/Users/elizabethsanger/workspace/launchpad_challenge/obj/Debug/netcoreapp2.2/launchpad_challenge.csproj.CoreCompileInputs.cache
+/Users/elizabethsanger/workspace/launchpad_challenge/obj/Debug/netcoreapp2.2/launchpad_challenge.RazorAssemblyInfo.cache
+/Users/elizabethsanger/workspace/launchpad_challenge/obj/Debug/netcoreapp2.2/launchpad_challenge.RazorAssemblyInfo.cs
+/Users/elizabethsanger/workspace/launchpad_challenge/obj/Debug/netcoreapp2.2/launchpad_challenge.AssemblyInfoInputs.cache
+/Users/elizabethsanger/workspace/launchpad_challenge/obj/Debug/netcoreapp2.2/launchpad_challenge.AssemblyInfo.cs
+/Users/elizabethsanger/workspace/launchpad_challenge/bin/Debug/netcoreapp2.2/launchpad_challenge.deps.json
+/Users/elizabethsanger/workspace/launchpad_challenge/bin/Debug/netcoreapp2.2/launchpad_challenge.runtimeconfig.json
+/Users/elizabethsanger/workspace/launchpad_challenge/bin/Debug/netcoreapp2.2/launchpad_challenge.runtimeconfig.dev.json
+/Users/elizabethsanger/workspace/launchpad_challenge/bin/Debug/netcoreapp2.2/launchpad_challenge.dll
+/Users/elizabethsanger/workspace/launchpad_challenge/bin/Debug/netcoreapp2.2/launchpad_challenge.pdb
+/Users/elizabethsanger/workspace/launchpad_challenge/obj/Debug/netcoreapp2.2/launchpad_challenge.RazorTargetAssemblyInfo.cache
+/Users/elizabethsanger/workspace/launchpad_challenge/obj/Debug/netcoreapp2.2/launchpad_challenge.dll
+/Users/elizabethsanger/workspace/launchpad_challenge/obj/Debug/netcoreapp2.2/launchpad_challenge.pdb
