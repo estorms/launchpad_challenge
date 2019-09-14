@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore;
+﻿using System.IO;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace launchpad_challenge
@@ -18,6 +20,12 @@ namespace launchpad_challenge
                 {
                     logging.ClearProviders();
                     logging.AddConsole();
+                })
+                .ConfigureAppConfiguration((hostingContext, config) =>
+                {
+                    config.SetBasePath(Directory.GetCurrentDirectory());
+                    config.AddJsonFile(
+                        "appsettings.json", optional: false, reloadOnChange: true);
                 });
     }
 }
