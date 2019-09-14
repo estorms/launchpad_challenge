@@ -34,4 +34,5 @@ Navigate to [https://localhost:5001](https://localhost:5001) in your browser
 
 - Further adherence to CQRS via introduction of [Mediatr](https://github.com/jbogard/MediatR.git)
 - Addition of data-access layer following repository pattern 
+- Exception handling middleware 
 - Replacement of external API with SQL database
