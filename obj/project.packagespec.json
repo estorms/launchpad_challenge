@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/Users/elizabethsanger/workspace/launchpad_challenge/launchpad_challenge.csproj",
+    "projectUniqueName": "/Users/elizabethsanger/workspace/LaunchpadChallenge/launchpad_challenge.csproj",
     "projectName": "launchpad_challenge",
-    "projectPath": "/Users/elizabethsanger/workspace/launchpad_challenge/launchpad_challenge.csproj",
-    "outputPath": "/Users/elizabethsanger/workspace/launchpad_challenge/obj/",
+    "projectPath": "/Users/elizabethsanger/workspace/LaunchpadChallenge/launchpad_challenge.csproj",
+    "outputPath": "/Users/elizabethsanger/workspace/LaunchpadChallenge/obj/",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -54,11 +54,23 @@
           "target": "Package",
           "version": "[2.2.0, )"
         },
+        "Microsoft.NET.Test.Sdk": {
+          "target": "Package",
+          "version": "[16.2.0, )"
+        },
         "Microsoft.NETCore.App": {
           "suppressParent": "All",
           "target": "Package",
           "version": "[2.2.0, )",
           "autoReferenced": true
+        },
+        "NUnit": {
+          "target": "Package",
+          "version": "[3.12.0, )"
+        },
+        "NUnit3TestAdapter": {
+          "target": "Package",
+          "version": "[3.15.1, )"
         },
         "Newtonsoft.Json": {
           "target": "Package",
