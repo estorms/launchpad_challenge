@@ -13,7 +13,6 @@
       <e p="launchpad_challenge.csproj" t="IncludeRecursive" />
       <e p="Models" t="Include">
         <e p="Lauchpad.cs" t="Include" />
-        <e p="LaunchpadEntity.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">

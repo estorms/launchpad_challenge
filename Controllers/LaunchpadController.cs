@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using launchpad_challenge.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
@@ -15,10 +16,15 @@ namespace launchpad_challenge.Controllers
     public class LaunchpadController : Controller
     {
         private ILogger<LaunchpadController> _logger;
+        private IConfiguration _config;
+        private bool _isExternalAPI;
 
-        public LaunchpadController(ILogger<LaunchpadController> logger)
+        public LaunchpadController(ILogger<LaunchpadController> logger, IConfiguration config)
         {
             _logger = logger;
+            _config = config;
+            _isExternalAPI = IsExternalAPI();
+
         }
         [HttpGet]
         public async Task<IActionResult> Get()
@@ -35,19 +41,27 @@ namespace launchpad_challenge.Controllers
 
                     var json = await response.Content.ReadAsStringAsync();
                     var deserializedJson = JsonConvert.DeserializeObject<Launchpad[]>(json).ToList();
+                    _logger.LogInformation("Successfully deserialized request.");
                     return Ok(deserializedJson);
                 }
                 catch (Exception ex)
                 {
                     switch (ex)
                     {
-                        case Exception ex_:
+                        case Exception _:
                             return NotFound();
                         default:
                             return NotFound();
                     }
                 }
             }
+        }
+
+        private bool IsExternalAPI()
+        {
+            //TODO: This should not be reliant on a string value; too brittle. XML config with int?
+            var source = _config.GetValue<string>("DataSource:Source");
+           return source == "ExternalAPI";
         }
     }
 }
