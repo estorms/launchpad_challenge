@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Net.Http;
-using launchpad_challenge.Models;
+using launchpad_challenge.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 
 namespace launchpad_challenge.Controllers
 {
@@ -15,53 +10,29 @@ namespace launchpad_challenge.Controllers
     [ApiController]
     public class LaunchpadController : Controller
     {
-        private ILogger<LaunchpadController> _logger;
-        private IConfiguration _config;
-        private bool _isExternalAPI;
+        private readonly ILogger<LaunchpadController> _logger;
+        private readonly ILaunchpadService _launchpadService;
 
-        public LaunchpadController(ILogger<LaunchpadController> logger, IConfiguration config)
+        public LaunchpadController(ILogger<LaunchpadController> logger, ILaunchpadService launchpadService)
         {
             _logger = logger;
-            _config = config;
-            _isExternalAPI = IsExternalAPI();
-
+            _launchpadService = launchpadService;
         }
+
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            using (var client = new HttpClient())
+            try
             {
-                try
-                {
-                    var response = await client.GetAsync($"https://api.spacexdata.com/v2/launchpads");
-                    response.EnsureSuccessStatusCode();
-                    _logger.LogInformation("Request for launchpad data successful.");
-                    
-                    //TODO: Abstract out into service layer; API should not transform data or apply business logic
-
-                    var json = await response.Content.ReadAsStringAsync();
-                    var deserializedJson = JsonConvert.DeserializeObject<Launchpad[]>(json).ToList();
-                    _logger.LogInformation("Successfully deserialized request.");
-                    return Ok(deserializedJson);
-                }
-                catch (Exception ex)
-                {
-                    switch (ex)
-                    {
-                        case Exception _:
-                            return NotFound();
-                        default:
-                            return NotFound();
-                    }
-                }
+                var data = await _launchpadService.RetrieveData();
+                return Ok(data);
             }
-        }
-
-        private bool IsExternalAPI()
-        {
-            //TODO: This should not be reliant on a string value; too brittle. XML config with int?
-            var source = _config.GetValue<string>("DataSource:Source");
-           return source == "ExternalAPI";
+            catch (Exception ex)
+            {
+                //TODO: This should be middleware with far more granular logging and accurate status codes
+                _logger.LogError($"Exception {ex} received");
+                return NotFound();
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using launchpad_challenge.Interfaces;
+using launchpad_challenge.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +24,7 @@ namespace launchpad_challenge
         {
             _logger.LogInformation("Configuring services");
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddAutoMapper(typeof(Startup));
+            services.AddScoped<ILaunchpadService, LaunchpadService>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

@@ -10,6 +10,9 @@
       <e p="Controllers" t="Include">
         <e p="LaunchpadController.cs" t="Include" />
       </e>
+      <e p="Interfaces" t="Include">
+        <e p="ILaunchpadService.cs" t="Include" />
+      </e>
       <e p="launchpad_challenge.csproj" t="IncludeRecursive" />
       <e p="Models" t="Include">
         <e p="Lauchpad.cs" t="Include" />
@@ -25,6 +28,9 @@
       <e p="Program.cs" t="Include" />
       <e p="Properties" t="Include">
         <e p="launchSettings.json" t="Include" />
+      </e>
+      <e p="Services" t="Include">
+        <e p="LaunchpadService.cs" t="Include" />
       </e>
       <e p="Startup.cs" t="Include" />
     </e>
