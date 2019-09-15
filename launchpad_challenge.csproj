@@ -4,6 +4,8 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <GenerateProgramFile>false</GenerateProgramFile>
+    <AssemblyName>LaunchpadChallenge</AssemblyName>
+    <RootNamespace>LaunchpadChallenge</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

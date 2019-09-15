@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using launchpad_challenge.HttpClients;
-using launchpad_challenge.Interfaces;
-using launchpad_challenge.Models;
-using launchpad_challenge.Services;
+using LaunchpadChallenge.HttpClients;
+using LaunchpadChallenge.Interfaces;
+using LaunchpadChallenge.Models;
+using LaunchpadChallenge.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Internal;
 using Moq;
 using NUnit.Framework;
 
-namespace launchpad_challenge.LaunchpadChallengeTests
+namespace LaunchpadChallenge.LaunchpadChallengeTests
 {
     public class LaunchpadChallengeTests
     {

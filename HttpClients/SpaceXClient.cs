@@ -2,14 +2,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using launchpad_challenge.Interfaces;
-using launchpad_challenge.Models;
+using LaunchpadChallenge.Interfaces;
+using LaunchpadChallenge.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-
-namespace launchpad_challenge.HttpClients
+namespace LaunchpadChallenge.HttpClients
 {
     public class SpaceXClient: ISpaceXClient
     {

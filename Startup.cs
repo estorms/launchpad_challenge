@@ -1,7 +1,7 @@
-﻿using launchpad_challenge.HttpClients;
-using launchpad_challenge.Interfaces;
-using launchpad_challenge.Repositories;
-using launchpad_challenge.Services;
+﻿using LaunchpadChallenge.HttpClients;
+using LaunchpadChallenge.Interfaces;
+using LaunchpadChallenge.Repositories;
+using LaunchpadChallenge.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;

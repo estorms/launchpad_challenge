@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using launchpad_challenge.Interfaces;
+using LaunchpadChallenge.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 

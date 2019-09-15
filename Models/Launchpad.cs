@@ -1,4 +1,4 @@
-namespace launchpad_challenge.Models
+namespace LaunchpadChallenge.Models
 {
 
     public class Launchpad
