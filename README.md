@@ -33,7 +33,7 @@ Navigate to [https://localhost:5001](https://localhost:5001) in your browser
 ## Future Improvements
 
 - Further adherence to CQRS via introduction of [Mediatr](https://github.com/jbogard/MediatR.git)
-- Exception-handing middleware
+- Exception handling middleware 
 - Replacement of external API with SQL database
 
 ## Ideas For Refactoring
