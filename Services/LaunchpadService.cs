@@ -16,47 +16,29 @@ namespace launchpad_challenge.Services
     {
         private readonly ILogger<LaunchpadService> _logger;
         private readonly IConfiguration _config;
+        private readonly ISpaceXClient _spaceXClient;
+        private readonly ILaunchpadRepo _launchpadRepo;
         private readonly bool _isExternalApi;
-        public LaunchpadService(ILogger<LaunchpadService> logger, IConfiguration config)
+        
+        //TODO: Injecting both repo and client is bloat, esp. if they become microservices. Decouple further.
+        public LaunchpadService(ILogger<LaunchpadService> logger, IConfiguration config, ILaunchpadRepo launchpadRepo, ISpaceXClient spaceXClient)
         {
             _config = config;
             _logger = logger;
+            _launchpadRepo = launchpadRepo;
+            _spaceXClient = spaceXClient;
             _isExternalApi = IsExternalApi();
         }
         public async Task<List<Launchpad>> RetrieveData()
         {
             if (_isExternalApi)
-                return await RetrieveApiData();
-            return await RetrieveLaunchpadFromDatabase();
+                return await _spaceXClient.RetrieveApiData();
+            return await _launchpadRepo.RetrieveLaunchpadDataFromDatabase();
         }
 
-        //TODO: Move this to a data-access layer that uses a repo to retrieve from db
-        public async Task<List<Launchpad>> RetrieveLaunchpadFromDatabase()
-        {
-            throw new NotImplementedException();
-        }
-
-        //TODO: Move this to a Client layer for further abstraction?
-        public async Task<List<Launchpad>> RetrieveApiData()
-        {
-            using (var client = new HttpClient())
-            {
-                var requestPath = _config.GetValue<string>("ConnectionStrings:LaunchpadExternalAPI");
-                var response = await client.GetAsync(requestPath);
-                response.EnsureSuccessStatusCode();
-                _logger.LogInformation("API request for launchpad data successful.");
-                var stringResponse = await response.Content.ReadAsStringAsync();
-                return DeserializeResponse(stringResponse);
-            }
-        }
-
-        private List<Launchpad> DeserializeResponse(string response)
-        {
-            return JsonConvert.DeserializeObject<Launchpad[]>(response).ToList();
-        }
-        private bool IsExternalApi()
-        {
-            //TODO: This should not be reliant on casting a string value; too brittle. Better solution, Liz
+        //TODO: Don't love relying on casting a string value; feels brittle. Better solution, Liz.
+        public bool IsExternalApi()
+        { 
             var source = _config.GetValue<string>("IsExternalAPI:Value");
            return bool.Parse(source);
         }

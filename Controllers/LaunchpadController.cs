@@ -30,7 +30,7 @@ namespace launchpad_challenge.Controllers
             catch (Exception ex)
             {
                 //TODO: This should be middleware with far more granular logging and accurate status codes
-                _logger.LogError($"Exception {ex} received");
+                _logger.LogError($"Exception {ex} encountered");
                 return NotFound();
             }
         }

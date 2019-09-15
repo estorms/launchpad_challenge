@@ -1,4 +1,6 @@
-﻿using launchpad_challenge.Interfaces;
+﻿using launchpad_challenge.HttpClients;
+using launchpad_challenge.Interfaces;
+using launchpad_challenge.Repositories;
 using launchpad_challenge.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,6 +27,8 @@ namespace launchpad_challenge
             _logger.LogInformation("Configuring services");
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddScoped<ILaunchpadService, LaunchpadService>();
+            services.AddScoped<ISpaceXClient, SpaceXClient>();
+            services.AddScoped<ILaunchpadRepo, LaunchpadRepo>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

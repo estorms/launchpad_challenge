@@ -33,6 +33,9 @@ Navigate to [https://localhost:5001](https://localhost:5001) in your browser
 ## Future Improvements
 
 - Further adherence to CQRS via introduction of [Mediatr](https://github.com/jbogard/MediatR.git)
-- Addition of data-access layer following repository pattern 
 - Exception handling middleware 
 - Replacement of external API with SQL database
+
+## Ideas For Refactoring
+
+- Use GraphQL to facilitate single-use endpoints that retrieve data from external API's OR databases
