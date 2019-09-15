@@ -30,6 +30,10 @@ dotnet run
 ##### to view project
 Navigate to [https://localhost:5001](https://localhost:5001) in your browser
 
+## Recommended IDEs:
+[Rider](https://www.jetbrains.com/rider/download)
+[Visual Studio Code](https://code.visualstudio.com/download)
+
 ## Future Improvements
 
 - Further adherence to CQRS via introduction of [Mediatr](https://github.com/jbogard/MediatR.git)
