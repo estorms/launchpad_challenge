@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using launchpad_challenge.Interfaces;
-using launchpad_challenge.Models;
+using LaunchpadChallenge.Interfaces;
+using LaunchpadChallenge.Models;
 
-namespace launchpad_challenge.Repositories
+namespace LaunchpadChallenge.Repositories
 {
     public class LaunchpadRepo: ILaunchpadRepo
     {

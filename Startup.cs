@@ -1,7 +1,7 @@
-﻿using launchpad_challenge.HttpClients;
-using launchpad_challenge.Interfaces;
-using launchpad_challenge.Repositories;
-using launchpad_challenge.Services;
+﻿using LaunchpadChallenge.HttpClients;
+using LaunchpadChallenge.Interfaces;
+using LaunchpadChallenge.Repositories;
+using LaunchpadChallenge.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -19,9 +19,7 @@ namespace launchpad_challenge
             Configuration = configuration;
             _logger = logger;
         }
-
         public IConfiguration Configuration { get; }
-
         public void ConfigureServices(IServiceCollection services)
         {
             _logger.LogInformation("Configuring services");
@@ -30,7 +28,6 @@ namespace launchpad_challenge
             services.AddScoped<ISpaceXClient, SpaceXClient>();
             services.AddScoped<ILaunchpadRepo, LaunchpadRepo>();
         }
-
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())

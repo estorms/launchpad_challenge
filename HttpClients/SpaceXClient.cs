@@ -2,14 +2,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using launchpad_challenge.Interfaces;
-using launchpad_challenge.Models;
+using LaunchpadChallenge.Interfaces;
+using LaunchpadChallenge.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-
-namespace launchpad_challenge.HttpClients
+namespace LaunchpadChallenge.HttpClients
 {
     public class SpaceXClient: ISpaceXClient
     {
@@ -33,8 +32,7 @@ namespace launchpad_challenge.HttpClients
                 return DeserializeResponse(stringResponse);
             }
         }
-        
-        public List<Launchpad> DeserializeResponse(string response)
+        private List<Launchpad> DeserializeResponse(string response)
         {
             return JsonConvert.DeserializeObject<Launchpad[]>(response).ToList();
         }

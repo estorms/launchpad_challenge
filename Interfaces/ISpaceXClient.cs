@@ -1,12 +1,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using launchpad_challenge.Models;
+using LaunchpadChallenge.Models;
 
-namespace launchpad_challenge.Interfaces
+namespace LaunchpadChallenge.Interfaces
 {
     public interface ISpaceXClient
     {
         Task<List<Launchpad>> RetrieveApiData();
-        List<Launchpad> DeserializeResponse(string response);
     }
 }
