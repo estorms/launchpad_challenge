@@ -32,7 +32,6 @@ namespace LaunchpadChallenge.HttpClients
                 return DeserializeResponse(stringResponse);
             }
         }
-        
         private List<Launchpad> DeserializeResponse(string response)
         {
             return JsonConvert.DeserializeObject<Launchpad[]>(response).ToList();

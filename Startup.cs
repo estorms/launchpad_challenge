@@ -19,9 +19,7 @@ namespace launchpad_challenge
             Configuration = configuration;
             _logger = logger;
         }
-
         public IConfiguration Configuration { get; }
-
         public void ConfigureServices(IServiceCollection services)
         {
             _logger.LogInformation("Configuring services");
@@ -30,7 +28,6 @@ namespace launchpad_challenge
             services.AddScoped<ISpaceXClient, SpaceXClient>();
             services.AddScoped<ILaunchpadRepo, LaunchpadRepo>();
         }
-
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())

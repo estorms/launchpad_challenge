@@ -5,7 +5,6 @@ using LaunchpadChallenge.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-
 namespace LaunchpadChallenge.Services
 {
     public class LaunchpadService : ILaunchpadService
@@ -26,7 +25,6 @@ namespace LaunchpadChallenge.Services
             _spaceXClient = spaceXClient;
             _isExternalApi = IsExternalApi();
         }
-
         public async Task<List<Launchpad>> RetrieveData()
         {
             if (_isExternalApi)
@@ -38,7 +36,6 @@ namespace LaunchpadChallenge.Services
             _logger.LogInformation("Retrieving launchpad data from database");
             return await _launchpadRepo.RetrieveLaunchpadDataFromDatabase();
         }
-
         //TODO: Don't love relying on casting a string value; feels brittle. Better solution, Liz.
         public bool IsExternalApi()
         {

@@ -49,7 +49,6 @@ namespace LaunchpadChallenge.LaunchpadChallengeTests
             It.IsAny<Func<object, Exception, string>>()), Times.Once);
         }
        
-
         private void SetupConfigurationMock(bool isExternalApi)
         {
             _configurationSectionMock = new Mock<IConfigurationSection>();
