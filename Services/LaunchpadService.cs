@@ -32,13 +32,17 @@ namespace launchpad_challenge.Services
         public async Task<List<Launchpad>> RetrieveData()
         {
             if (_isExternalApi)
+            {
+                _logger.LogInformation("Retrieving launchpad data from SpaceX API");
                 return await _spaceXClient.RetrieveApiData();
+            }
+            _logger.LogInformation("Retrieving launchpad data from database");
             return await _launchpadRepo.RetrieveLaunchpadDataFromDatabase();
         }
 
         //TODO: Don't love relying on casting a string value; feels brittle. Better solution, Liz.
         public bool IsExternalApi()
-        { 
+        {
             var source = _config.GetValue<string>("IsExternalAPI:Value");
            return bool.Parse(source);
         }

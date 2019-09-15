@@ -7,6 +7,5 @@ namespace launchpad_challenge.Interfaces
     public interface ISpaceXClient
     {
         Task<List<Launchpad>> RetrieveApiData();
-        List<Launchpad> DeserializeResponse(string response);
     }
 }

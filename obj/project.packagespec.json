@@ -54,11 +54,19 @@
           "target": "Package",
           "version": "[2.2.0, )"
         },
+        "Microsoft.NET.Test.Sdk": {
+          "target": "Package",
+          "version": "[16.2.0, )"
+        },
         "Microsoft.NETCore.App": {
           "suppressParent": "All",
           "target": "Package",
           "version": "[2.2.0, )",
           "autoReferenced": true
+        },
+        "Moq": {
+          "target": "Package",
+          "version": "[4.13.0, )"
         },
         "NUnit": {
           "target": "Package",
