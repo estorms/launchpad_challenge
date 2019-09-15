@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 using LaunchpadChallenge.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -27,11 +28,17 @@ namespace LaunchpadChallenge.Controllers
                 var data = await _launchpadService.RetrieveData();
                 return Ok(data);
             }
+            //TODO: This should be exception-handling middleware with far more granular logging and accurate status codes
             catch (Exception ex)
             {
-                //TODO: This should be middleware with far more granular logging and accurate status codes
                 _logger.LogError($"Exception {ex} encountered");
-                return NotFound();
+                switch (ex)
+                {
+                 case HttpRequestException _:
+                     return BadRequest();
+                 default:
+                     return NotFound();
+                }
             }
         }
     }
