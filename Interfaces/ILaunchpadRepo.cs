@@ -4,9 +4,8 @@ using launchpad_challenge.Models;
 
 namespace launchpad_challenge.Interfaces
 {
-    public interface ILaunchpadService
+    public interface ILaunchpadRepo
     {
-        Task<List<Launchpad>> RetrieveData();
-        bool IsExternalApi();
+        Task<List<Launchpad>> RetrieveLaunchpadDataFromDatabase();
     }
 }

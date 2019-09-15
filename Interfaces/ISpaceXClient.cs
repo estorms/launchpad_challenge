@@ -4,9 +4,9 @@ using launchpad_challenge.Models;
 
 namespace launchpad_challenge.Interfaces
 {
-    public interface ILaunchpadService
+    public interface ISpaceXClient
     {
-        Task<List<Launchpad>> RetrieveData();
-        bool IsExternalApi();
+        Task<List<Launchpad>> RetrieveApiData();
+        List<Launchpad> DeserializeResponse(string response);
     }
 }
