@@ -31,8 +31,8 @@ dotnet run
 Navigate to [https://localhost:5001](https://localhost:5001) in your browser
 
 ## Recommended IDEs:
-[Rider](https://www.jetbrains.com/rider/download)
-[Visual Studio Code](https://code.visualstudio.com/download)
+- [Rider](https://www.jetbrains.com/rider/download)
+- [Visual Studio Code](https://code.visualstudio.com/download)
 
 ## Future Improvements
 
