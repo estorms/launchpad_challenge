@@ -42,4 +42,4 @@ Navigate to [https://localhost:5001](https://localhost:5001) in your browser
 
 ## Ideas For Refactoring
 
-- Use [GraphQL] (https://graphql.org/) to facilitate single-use endpoints that retrieve data from external API's OR databases
+- Use [GraphQL](https://graphql.org/) to facilitate single-use endpoints that retrieve data from external API's OR databases
